@@ -3,6 +3,11 @@ Programa que analisa sensores instalados no campo e confere informações sobre 
 
 Projeto para Global Solution - FIAP - 2023
 
+Integrantes Grupo: 
+97811 - EDUARDO PALUDETTO JUNIOR
+98220 - MURILO ALVES DE MOURA
+99799 - FELIPE GIMENES
+
 Para Testar Basta alterar os valores no arquivo CSV.
 
 Contextualização:
