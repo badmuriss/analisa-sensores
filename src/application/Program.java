@@ -24,7 +24,7 @@ public class Program {
 		String[] maiorTaxa = {"0","0"};
 		
 		//remove o cabecalho do csv
-		String headerLine = br.readLine();
+		br.readLine();
 		
 		while((linha = br.readLine()) != null){
 			String[] arrayLinhaString = linha.split(",");
@@ -40,26 +40,44 @@ public class Program {
 					//valida a taxa
 					if(taxaTransferencia >= 250 && taxaTransferencia <= 500 && taxaTransferencia % 10 == 0) {
 						if(iD <= 1999 ){
-							pH = Double.parseDouble(arrayLinhaString[4]);
-							//valida o pH
-							if (pH >= 4 && pH <= 8) {
-								listaSensoresGrupo1.add(new Sensor(iD, areaMonitorada, alcanceTransmissao, taxaTransferencia, pH)); 
+							//valida a area do grupo 1
+							if(areaMonitorada <= 10 && areaMonitorada > 0) {
+								pH = Double.parseDouble(arrayLinhaString[4]);
+								//valida o pH
+								if (pH >= 4 && pH <= 8) {
+									listaSensoresGrupo1.add(new Sensor(iD, areaMonitorada, alcanceTransmissao, taxaTransferencia, pH)); 
+								} else {
+									System.out.println("pH invalido no Sensor de ID: " + iD + ", Linha " + count);
+									System.exit(0);
+								}
+								
+								if (!(pH >= 5.5 && pH <= 6.5)) {
+									System.out.println("SENSOR " + iD + ", pH ALTERADO!");
+								}
 							} else {
-								System.out.println("pH invalido no Sensor de ID: " + iD + ", Linha " + count);
+								System.out.println("Area monitorada fora dos limites no Sensor " + iD + ", Linha " + count );
 								System.exit(0);
 							}
 							
-							if (!(pH >= 5.5 && pH <= 6.5)) {
-								System.out.println("SENSOR " + iD + ", pH ALTERADO!");
-							}
 							
 						} 
 						
 						if(iD >= 2000 && iD <= 2999 ){ 
-							listaSensoresGrupo2.add(new Sensor(iD, areaMonitorada, alcanceTransmissao, taxaTransferencia));
-						
+							//valida a area do grupo 2
+							if(areaMonitorada <= 15 && areaMonitorada > 0) {
+								listaSensoresGrupo2.add(new Sensor(iD, areaMonitorada, alcanceTransmissao, taxaTransferencia));
+							} else {
+								System.out.println("Area monitorada fora dos limites no Sensor " + iD + ", Linha " + count );
+								System.exit(0);
+							}
 						} if(iD >= 3000 && iD <= 3999 ) {
-							listaSensoresGrupo3.add(new Sensor(iD, areaMonitorada, alcanceTransmissao, taxaTransferencia));
+							//valida a area do grupo 3
+							if(areaMonitorada <= 20 && areaMonitorada > 0) {
+								listaSensoresGrupo3.add(new Sensor(iD, areaMonitorada, alcanceTransmissao, taxaTransferencia));
+							} else {
+								System.out.println("Area monitorada fora dos limites no Sensor " + iD + ", Linha " + count );
+								System.exit(0);
+							}
 						}
 					} else {
 						System.out.println("Taxa de transferencia invalida no Sensor de ID: " + iD + ", Linha " + count);
