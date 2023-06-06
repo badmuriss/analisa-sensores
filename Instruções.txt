@@ -1,0 +1,58 @@
+# analisa-sensores
+Programa que analisa sensores instalados no campo e confere informações sobre eles
+
+Projeto para Global Solution - FIAP - 2023
+
+Integrantes Grupo: 
+97811 - EDUARDO PALUDETTO JUNIOR
+98220 - MURILO ALVES DE MOURA
+99799 - FELIPE GIMENES
+
+Para Testar Basta alterar os valores no arquivo CSV.
+
+Contextualização:
+
+Conforme descrito no artigo <https://blog.aegro.com.br/sensores-na-agricultura/> a
+evolução tecnológica tem tornado a agricultura cada vez mais eficiente e produtiva.
+Neste contexto, considere três tipos de sensores instalados no campo, conforme
+descrição abaixo:
+Grupo 1: Sensores de umidade e pH, capazes de monitorar uma área de 10 m2
+.
+Grupo 2: Sensores de condutividade elétrica, capazes de monitorar uma área de 15 m2
+.
+Grupo 3: Sensores térmicos, capazes de monitorar uma área de 20 m2
+.
+Os sensores do Grupo 1 são identificados por um número de identificação (ID) de 4
+dígitos, de 1001 a 1999. Já os sensores do Grupo 2 são identificados por um número de
+identificação (ID) de 4 dígitos, de 2001 a 2999. E, finalmente, os sensores do Grupo 3 são
+identificados por um número de identificação (ID) de 4 dígitos, de 3001 a 3999.
+Faça um programa que receba as informações de 32 sensores: número de identificação
+do sensor (ID), área monitorada pelo sensor (em m2), seu alcance de transmissão (em km) 
+e sua taxa de transferência (em kbit/s); e calcule e exiba:
+
+● (0,5 ponto) A quantidade de sensores do Grupo 1.
+● (0,5 ponto) A quantidade de sensores do Grupo 2.
+● (0,5 ponto) A quantidade de sensores do Grupo 3.
+● (0,5 ponto) A área TOTAL monitorada por estes 32 sensores.
+● (1,0 ponto) O número de identificação do sensor de maior alcance de transmissão e o
+valor deste alcance de transmissão (em km).
+● (1,0 ponto) O número de identificação do sensor de menor alcance de transmissão e o
+valor deste alcance de transmissão (em km).
+● (1,0 ponto) O número de identificação do sensor de maior taxa de transmissão e o valor
+desta taxa de transmissão (em kbit/s).
+
+OBSERVAÇÕES:
+1) (1,0 ponto) O programa deve verificar se o número de identificação dos sensores é um
+número inteiro válido. Por exemplo, para os sensores do Grupo 1, entre 1001 e 1999
+(inclusive, ou seja 1001 ≤ número de identificação sensor ≤ 1999).
+2) (1,0 ponto) O programa deve verificar se o alcance de transmissão de cada sensor é
+um valor válido, entre 5 e 10 km, variando de 200 m em 200 m. Por exemplo, 5,2 km; 5,4
+km; 5,6 km; ...; 9,8 km; 10 km.
+3) (1,0 ponto) O programa deve verificar se a taxa de transmissão de cada sensor é um
+valor válido, entre 250 kbit/s e 500 kbit/s, variando de 10 kbit/s em 10 kbit/s. Por exemplo,
+250 kbit/s; 260 kbit/s; 270 kbit/s; ...; 490 kbit/s; 500 kbit/s.
+4) (1,0 ponto) Para os sensores do Grupo 1, o programa também deve receber e
+armazenar o valor do pH, que deve estar na faixa de 4,0 a 8,0. Ou seja, 4,0 ≤ pH ≤ 8,0.
+5) (1,0 ponto) Caso um determinado sensor indique pH fora do intervalo de 5,5 a 6,5; o
+programa deverá exibir uma mensagem de alerta: “SENSOR SSSS, pH ALTERADO!”,
+onde SSSS = ID do sensor em questão. 
